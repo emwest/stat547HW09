@@ -25,5 +25,6 @@ This is a basic example which shows you how to solve a common problem:
 ```{r example}
 library(hw09)
 lmfun(gapminder$lifeExp, gapminder$gdpPercap, mydata = gapminder)
+
 pow(1:35, 5)
 ```
