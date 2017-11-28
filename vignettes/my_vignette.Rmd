@@ -1,0 +1,61 @@
+---
+title: "Visualizing Linear Model Objects"
+author: "Emily west"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This package is not intended for general use, but rather to practice and manipulate the functionalities of packages.
+
+The functions contained in this package assist the user in visualizing the output objects of simple linear regressions, specifically the regression coefficients, p-values and qplots. The gapminder dataset is included to provide the user with a dataset in which to experiment with the uses of the package.
+
+There are many things that can be manipulated within a vignette, and I have chosen to keep some of the following examples as "cheat sheet" for my future self, although I have modified a few to discover for myself what is happening behind the scenes.
+
+## Styles
+
+The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+
+    output: 
+      rmarkdown::html_vignette:
+        css: mystyles.css
+
+## Figures
+
+The figure sizes have been customised so that you can easily put two images side-by-side. 
+
+```{r, fig.show='hold'}
+plot(1:25, xlab = "new label", ylab = "new label")
+plot(10:1)
+```
+
+This figure caption is made possible by including `fig_caption: yes` in YAML:
+
+    output:
+      rmarkdown::html_vignette:
+        fig_caption: yes
+
+Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+
+## More Examples
+
+You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+
+```{r, echo=FALSE, results='asis'}
+knitr::kable(head(mtcars, 10))
+```
+
+Also a quote using `>`:
+
+> "He who gives up [code] safety for [code] speed deserves neither."
+([via](https://twitter.com/hadleywickham/status/504368538874703872))

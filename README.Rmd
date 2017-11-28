@@ -1,0 +1,29 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+## hw09 : A package to assist in the visualization of linear model results
+
+The goal of hw09 is to create an easy to use package that allows users to quickly visualize the objects produced in a simple linear model, including a table of regression coefficients and p values, as well as qplot using the lmfun() function. Please note, the pow function is a silly add on that was mostly developed in class.
+
+The gapminder data were included as a readily accessible way for the user to practice using the function. I added to the pow function we developed in class to include plots but also to exploit some of the different test that expressions.
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(hw09)
+lmfun(gapminder$lifeExp, gapminder$gdpPercap, mydata = gapminder)
+pow(1:35, 5)
+```
